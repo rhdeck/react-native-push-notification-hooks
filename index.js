@@ -1,28 +1,35 @@
 import PushNotification from "react-native-push-notification";
-import Deferred from "es6-deferred";
 const notifications = [];
 let deviceToken = null;
 let tokens = [];
 const useRequestNotifications = (
   application_id,
-  { alert = true, badge = true, sound = true }
+  { alert = true, badge = true, sound = true } = {}
 ) => {
+  [token, setToken] = useState();
+  [error, setError] = useState();
   return useEffect(async () => {
-    const deferred = new Deferred();
+    tokens.push(setToken);
+    if (deviceToken) setToken(deviceToken);
     await PushNotification.requestPermissions();
     PushNotification.configure({
       onRegister: ({ token }) => {
         deviceToken = token;
         tokens.map(f => f(token));
-        deferred.resolve();
       },
-      onError: error => deferred.reject(error),
+      onError: error => setError(error),
       onNotification: notification => notifications.map(f => f(notification)),
       permissions: { alert, badge, sound },
       senderId: application_id
     });
-    return await deferred;
+    tokens.push(setToken);
+    if (deviceToken) setToken(deviceToken);
+    return () => {
+      const j = tokens.indexOf(setToken);
+      if (i > -1) tokens.splice(i, 1);
+    };
   }, []);
+  return { token, error };
 };
 const usePushNotification = () => {
   [notification, setNotification] = useState();
