@@ -1,9 +1,9 @@
 {
-  "name": "react-native-push-notifications-hooks",
+  "name": "react-native-push-notification-hooks",
   "version": "1.0.0",
-  "description": "Hook interface for react-native-push-notifications",
+  "description": "Hook interface for react-native-push-notification",
   "main": "index.js",
-  "repository": "https://github.com/rhdeck/react-native-push-notifications-hooks",
+  "repository": "https://github.com/rhdeck/react-native-push-notification-hooks",
   "author": "Ray Deck",
   "license": "MIT",
   "dependencies": {
