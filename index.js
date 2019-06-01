@@ -9,7 +9,7 @@ const useRequestNotifications = (
 ) => {
   [token, setToken] = useState();
   [error, setError] = useState();
-  return useEffect(async () => {
+  useEffect(async () => {
     tokens.push(setToken);
     if (deviceToken) setToken(deviceToken);
     await PushNotification.requestPermissions();
