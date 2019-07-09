@@ -6,7 +6,9 @@
   "repository": "https://github.com/rhdeck/react-native-push-notification-hooks",
   "author": "Ray Deck",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@raydeck/useasynceffect": "^1.0.0"
+  },
   "peerDependencies": {
     "react-native-push-notification": "^3.1.3"
   }
