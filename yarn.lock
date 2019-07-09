@@ -2,3 +2,6 @@
 # yarn lockfile v1
 
 
+"@raydeck/useasynceffect@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@raydeck/useasynceffect/-/useasynceffect-1.0.0.tgz#8eef580568cd8bd8e96b920f587d6d993ca36938"
