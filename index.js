@@ -22,7 +22,7 @@ const useRequestNotifications = (
       onError: error => setError(error),
       onNotification: notification => notifications.map(f => f(notification)),
       permissions: { alert, badge, sound },
-      senderId: application_id
+      senderID: application_id
     });
     tokens.push(setToken);
     if (deviceToken) setToken(deviceToken);
